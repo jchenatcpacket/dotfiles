@@ -36,3 +36,7 @@ vim.cmd([[
   amenu PopUp.Copy\ abs\ Filepath <cmd>let @+ = expand('%:p')<cr>
   amenu PopUp.Go\ to\ Definition <cmd>lua vim.lsp.buf.definition()<CR>
 ]])
+
+-- undotree
+vim.cmd("packadd nvim.undotree")
+vim.keymap.set("n", "<leader>u", require("undotree").open)
