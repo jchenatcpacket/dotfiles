@@ -5,14 +5,25 @@ return {
 		local fzf = require("fzf-lua")
 		fzf.setup({
 			files = {
-				-- rg_opts = [[--color=never --hidden --files -g '!{.git,node_modules,.cargo}']],
-				-- fd_opts = [[--color=never --hidden --type f --type l --exclude .git --exclude .cargo]],
+				rg_opts = "--color=never --files --hidden --follow " .. "-g '!.git' -g '!node_modules' -g '!.cargo'",
+				fd_opts = "--color=never --type f --hidden --follow "
+					.. "--exclude .git --exclude node_modules --exclude .cargo",
 			},
 			grep = {
-				-- rg_opts = [[--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e -g '!{.git,node_modules,.cargo}']],
+				rg_opts = "--column --line-number --no-heading --color=always --smart-case "
+					.. "--max-columns=4096 "
+					.. "-g '!.git/' -g '!node_modules/' -g '!.cargo/'",
 				hidden = true,
 			},
+			previewers = {
+				builtin = {
+					title_fnamemodify = function(s)
+						return vim.fn.fnamemodify(s, ":p")
+					end,
+				},
+			},
 		})
+
 		fzf.register_ui_select()
 
 		vim.keymap.set({ "n" }, "<leader>sb", function()
@@ -81,7 +92,7 @@ return {
 		end, { desc = "Show LSP Implementation" })
 
 		vim.keymap.set("n", "<leader>dd", function()
-            fzf.diagnostics_document()
+			fzf.diagnostics_document()
 		end, { desc = "Show document diagnostics" })
 		vim.keymap.set("n", "<leader>dw", function()
 			fzf.diagnostics_workspace()
