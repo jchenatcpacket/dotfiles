@@ -26,25 +26,40 @@ return {
 
 		fzf.register_ui_select()
 
+        -- buffers and tabs
 		vim.keymap.set({ "n" }, "<leader>sb", function()
 			fzf.buffers()
-		end, { desc = "search buffers" })
-
-		vim.keymap.set({ "n" }, "<leader>sf", function()
-			fzf.files({ resume = true })
-		end, { desc = "search files" })
-
+		end, { desc = "buffers" })
 		vim.keymap.set({ "n" }, "<leader>st", function()
 			fzf.tabs()
 		end, { desc = "search tabs" })
 
-		vim.keymap.set({ "n" }, "<leader>sl", function()
-			fzf.grep({ resume = true })
-		end, { desc = "search last" })
+		-- files
+		vim.keymap.set({ "n" }, "<leader>sf", function()
+			fzf.files()
+		end, { desc = "files" })
+		vim.keymap.set({ "n" }, "<leader>srf", function()
+			fzf.files({ resume = true })
+		end, { desc = "resume files" })
 
-		vim.keymap.set({ "n" }, "<leader>sr", function()
-			fzf.resume()
-		end, { desc = "resume search" })
+		-- grep current buffer
+		vim.keymap.set("n", "<leader>sg", function()
+			fzf.grep_curbuf()
+		end, { desc = "grep current buffer" })
+		vim.keymap.set("n", "<leader>srg", function()
+			fzf.grep_curbuf({ resume = true })
+		end, { desc = "resume grep current buffer" })
+
+		-- grep project
+		vim.keymap.set("n", "<leader>sp", function()
+			fzf.grep_project()
+		end, { desc = "grep project" })
+
+		vim.keymap.set("n", "<leader>srp", function()
+			fzf.grep_project({ resume = true })
+		end, { desc = "resume grep project" })
+
+		vim.keymap.set({ "n" }, "<C-f>", ":FzfLua ", { desc = ":Fzf" })
 
 		vim.keymap.set({ "n", "v" }, "<leader>sk", function()
 			fzf.keymaps({ winopts = { preview = { hidden = true } } })
@@ -53,23 +68,6 @@ return {
 		vim.keymap.set({ "n", "v" }, "<leader>sc", function()
 			fzf.commands({ winopts = { preview = { hidden = true } } })
 		end, { desc = "search commands" })
-
-		vim.keymap.set("v", "<leader>sv", function()
-			fzf.grep_visual({ resume = true })
-		end, { desc = "Search visual" })
-		vim.keymap.set("n", "<leader>sc", function()
-			fzf.grep_curbuf({ resume = true })
-		end, { desc = "grep buffer" })
-		vim.keymap.set("n", "<leader>sp", function()
-			fzf.grep_project({ resume = true })
-		end, { desc = "grep project" })
-		vim.keymap.set("n", "<leader>sw", function()
-			fzf.grep_cword()
-		end, { desc = "Search word" })
-		vim.keymap.set("n", "<leader>sW", function()
-			fzf.grep_cWORD()
-		end, { desc = "Search WORD" })
-		vim.keymap.set({ "n" }, "<C-f>", ":FzfLua ", { desc = "fzflua command" })
 
 		vim.keymap.set("n", "<leader>lr", function()
 			fzf.lsp_references({ jump1 = false })
