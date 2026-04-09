@@ -10,7 +10,6 @@ return {
 			{ "<leader>l", group = "LSP", mode = "n" },
 			{ "<leader>lj", group = "LSP jump", mode = "n" },
 			{ "<leader>d", group = "diagnostics", mode = "n" },
-			{ "<leader>c", group = "Trouble", mode = "n" },
 			{ "<leader>h", group = "Gitsigns", mode = "n" },
 			{ "<leader>f", group = "format", mode = { "n", "v" } },
 			{ "<leader>m", group = "Recall Mark", mode = "n" },
