@@ -14,26 +14,26 @@ end
 abbr -a dc docker compose
 abbr -a v nvim
 
-function fish_prompt
-    # Parse git branch
-    set -l git_branch (git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
-
-    # Build prompt components
-    set -l user (set_color green)(whoami)(set_color normal)
-    set -l at (set_color cyan)@(set_color normal)
-    set -l host (set_color blue)(hostname -s)(set_color normal)
-    set -l colon (set_color yellow):(set_color normal)
-    set -l cwd (set_color yellow)(prompt_pwd)(set_color normal)
-    set -l git_part ""
-    set -l timestamp (set_color magenta)"["(date '+%Y-%m-%d %H:%M:%S')"]"(set_color normal)
-
-    if test -n "$git_branch"
-        set git_part (set_color red)$git_branch(set_color normal)" "
-    end
-
-    echo -e "🎅 $user$at$host$colon$cwd $git_part on $timestamp 🎄"
-    echo -n " => "
-end
+# function fish_prompt
+#     # Parse git branch
+#     set -l git_branch (git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
+#
+#     # Build prompt components
+#     set -l user (set_color green)(whoami)(set_color normal)
+#     set -l at (set_color cyan)@(set_color normal)
+#     set -l host (set_color blue)(hostname -s)(set_color normal)
+#     set -l colon (set_color yellow):(set_color normal)
+#     set -l cwd (set_color yellow)(prompt_pwd)(set_color normal)
+#     set -l git_part ""
+#     set -l timestamp (set_color magenta)"["(date '+%Y-%m-%d %H:%M:%S')"]"(set_color normal)
+#
+#     if test -n "$git_branch"
+#         set git_part (set_color red)$git_branch(set_color normal)" "
+#     end
+#
+#     echo -e "🎅 $user$at$host$colon$cwd $git_part on $timestamp 🎄"
+#     echo -n " => "
+# end
 
 zoxide init fish | source
 starship init fish | source
