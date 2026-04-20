@@ -1,12 +1,8 @@
 return {
 	"gbprod/yanky.nvim",
-	dependencies = {
-		{ "kkharji/sqlite.lua" },
-	},
 	config = function()
 		require("yanky").setup({
 			ring = {
-				storage = "sqlite",
 				permanent_wrapper = require("yanky.wrappers").remove_carriage_return,
 			},
 			picker = {
