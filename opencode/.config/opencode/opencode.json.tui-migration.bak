@@ -3,5 +3,6 @@
   "autoupdate": true,
   "server": {
     "port": 4096
-  }
+  },
+  "theme": "gruvbox"
 }
