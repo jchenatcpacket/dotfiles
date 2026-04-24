@@ -28,15 +28,16 @@ return {
 			sections = {
 				lualine_a = { "mode", "grapple" },
 				lualine_b = { "branch" },
-				lualine_c = { { "filename", newfile_status = true, path = 3 } },
+				lualine_c = {},
 				lualine_x = {
 					{
-						"filetype",
-						colored = true, -- Displays filetype icon in color if set to true
-						icon_only = false, -- Display only an icon for filetype
-						icon = { align = "left" }, -- Display filetype icon on the right hand side
-						-- icon =    {'X', align='right'}
-						-- Icon string ^ in table is ignored in filetype component
+						"diagnostics",
+						symbols = {
+							error = " ",
+							warn = " ",
+							info = " ",
+							hint = " ",
+						},
 					},
 				},
 				lualine_y = {
@@ -63,17 +64,8 @@ return {
 			inactive_sections = {
 				lualine_a = {},
 				lualine_b = {},
-				lualine_c = { { "filename", newfile_status = true, path = 3 } },
-				lualine_x = {
-					{
-						"filetype",
-						colored = true, -- Displays filetype icon in color if set to true
-						icon_only = false, -- Display only an icon for filetype
-						icon = { align = "left" }, -- Display filetype icon on the right hand side
-						-- icon =    {'X', align='right'}
-						-- Icon string ^ in table is ignored in filetype component
-					},
-				},
+				lualine_c = {},
+				lualine_x = {},
 				lualine_y = {},
 				lualine_z = {},
 			},
@@ -87,7 +79,15 @@ return {
 				},
 				lualine_b = {},
 				lualine_c = {},
-				lualine_x = {},
+				lualine_x = {
+					{
+						"filetype",
+						colored = true, -- Displays filetype icon in color if set to true
+						icon_only = false, -- Display only an icon for filetype
+						icon = { align = "left" }, -- Display filetype icon on the right hand side
+					},
+					{ "filename", newfile_status = true, path = 3 },
+				},
 				lualine_y = {},
 				lualine_z = {},
 			},
@@ -102,20 +102,9 @@ return {
 
 			inactive_winbar = {
 				lualine_a = {},
-				lualine_b = {
-					-- { "filename", newfile_status = true, path = 3 },
-				},
+				lualine_b = {},
 				lualine_c = {},
-				lualine_x = {
-					-- {
-					-- 	"filetype",
-					-- 	colored = true, -- Displays filetype icon in color if set to true
-					-- 	icon_only = false, -- Display only an icon for filetype
-					-- 	icon = { align = "left" }, -- Display filetype icon on the right hand side
-					-- 	-- icon =    {'X', align='right'}
-					-- 	-- Icon string ^ in table is ignored in filetype component
-					-- },
-				},
+				lualine_x = {},
 				lualine_y = {},
 				lualine_z = {},
 			},
