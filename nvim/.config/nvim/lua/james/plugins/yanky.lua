@@ -1,6 +1,5 @@
 return {
 	"gbprod/yanky.nvim",
-	cond = not vim.g.vscode,
 	config = function()
 		require("yanky").setup({
 			ring = {
