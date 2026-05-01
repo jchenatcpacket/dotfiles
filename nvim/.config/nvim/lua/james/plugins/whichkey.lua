@@ -20,6 +20,7 @@ return {
 			{ "<leader>s", group = "Fzf", mode = { "n", "v" } },
 			{ "<leader>sr", group = "Fzf resume", mode = { "n", "v" } },
 			{ "<leader>?", group = "help", mode = { "n", "v" } },
+			{ "<leader>v", "<cmd>CodeDiff<cr>", desc = "Open CodeDiff", mode = "n" },
 		})
 	end,
 }
