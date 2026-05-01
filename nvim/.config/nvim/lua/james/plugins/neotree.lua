@@ -14,6 +14,9 @@ return {
 			enable_diagnostics = false,
 			window = {
 				position = "left",
+                mappings = {
+                    ["s"] = "",
+                }
 			},
 			filesystem = {
 				bind_to_cwd = false,
