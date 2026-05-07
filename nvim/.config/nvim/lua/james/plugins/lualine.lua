@@ -76,7 +76,7 @@ return {
 						"tabs",
 						max_length = vim.o.columns,
 						mode = 2,
-						use_mode_colors = true,
+						use_mode_colors = false,
 					},
 				},
 				lualine_b = {},
