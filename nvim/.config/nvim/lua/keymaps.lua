@@ -35,6 +35,13 @@ vim.keymap.set({ "n", "v" }, "<leader>o", function()
 	vim.fn.system({ "tmux", "split-window", "-h", "-c", vim.fn.getcwd(), "opencode" })
 end, { desc = "opencode" })
 
+vim.keymap.set("n", "<Tab>", ">>", { desc = "Indent line" })
+vim.keymap.set("n", "<S-Tab>", "<<", { desc = "Dedent line" })
+
+-- Visual mode: Tab/Shift-Tab to indent/dedent selection, keeping it selected
+vim.keymap.set("v", "<Tab>", ">gv", { desc = "Indent selection" })
+vim.keymap.set("v", "<S-Tab>", "<gv", { desc = "Dedent selection" })
+
 -- vim.keymap.set({ "n", "v" }, "<leader>c", function()
 -- 	vim.fn.system({ "tmux", "split-window", "-h", "-c", vim.fn.getcwd(), "claude" })
 -- end, { desc = "claude code" })
