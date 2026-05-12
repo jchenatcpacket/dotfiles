@@ -1,5 +1,6 @@
 return {
 	"folke/trouble.nvim",
+	cond = not vim.g.vscode,
 	opts = {
 		win = {
 			position = "right",
