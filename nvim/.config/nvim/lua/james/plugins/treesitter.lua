@@ -127,7 +127,7 @@ return {
 		cond = not vim.g.vscode,
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		config = function()
-			require("treesitter-context").setup({ max_lines = 2 })
+			require("treesitter-context").setup({ max_lines = 3 })
 		end,
 	},
 }
