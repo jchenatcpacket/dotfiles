@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-    cond = not vim.g.vscode,
+	cond = not vim.g.vscode,
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
@@ -81,7 +81,13 @@ return {
 				},
 				lualine_b = {},
 				lualine_c = {},
-				lualine_x = {
+				lualine_x = {},
+				lualine_y = {},
+				lualine_z = {},
+			},
+			winbar = {
+				lualine_a = {},
+				lualine_b = {
 					{
 						"filetype",
 						colored = true, -- Displays filetype icon in color if set to true
@@ -90,12 +96,6 @@ return {
 					},
 					{ "filename", newfile_status = true, path = 3 },
 				},
-				lualine_y = {},
-				lualine_z = {},
-			},
-			winbar = {
-				lualine_a = {},
-				lualine_b = {},
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {},
@@ -104,7 +104,15 @@ return {
 
 			inactive_winbar = {
 				lualine_a = {},
-				lualine_b = {},
+				lualine_b = {
+					{
+						"filetype",
+						colored = true, -- Displays filetype icon in color if set to true
+						icon_only = false, -- Display only an icon for filetype
+						icon = { align = "left" }, -- Display filetype icon on the right hand side
+					},
+					{ "filename", newfile_status = true, path = 3 },
+				},
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {},
