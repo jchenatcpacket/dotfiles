@@ -1,6 +1,7 @@
 return {
 	"mistweaverco/kulala.nvim",
 	ft = { "http", "rest" },
+    cond = not vim.g.vscode,
 	config = function()
 		local kulala = require("kulala")
 
