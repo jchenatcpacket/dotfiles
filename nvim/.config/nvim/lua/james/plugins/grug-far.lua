@@ -52,7 +52,6 @@ return {
 
 		vim.api.nvim_create_user_command("GrugFarClose", function()
 			grugfar.get_instance(0):close()
-			vim.cmd("tabclose")
 		end, { desc = "Closing Grug Far" })
 	end,
 }
