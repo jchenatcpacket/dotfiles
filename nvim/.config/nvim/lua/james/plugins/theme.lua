@@ -1,8 +1,11 @@
 return {
 	"ellisonleao/gruvbox.nvim",
 	priority = 1000,
-    cond = not vim.g.vscode,
+	cond = not vim.g.vscode,
 	config = function()
-		vim.cmd([[colorscheme gruvbox]])
+		require("gruvbox").setup({
+			transparent_mode = true,
+		})
+		vim.cmd("colorscheme gruvbox")
 	end,
 }
