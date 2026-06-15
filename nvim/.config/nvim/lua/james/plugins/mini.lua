@@ -1,13 +1,5 @@
 return {
 	{
-		"nvim-mini/mini.pairs",
-		version = "*",
-		cond = not vim.g.vscode,
-		config = function()
-			require("mini.pairs").setup()
-		end,
-	},
-	{
 		"nvim-mini/mini.surround",
 		version = "*",
 		cond = not vim.g.vscode,
@@ -18,7 +10,7 @@ return {
 					delete = "<C-r>d", -- Delete surrounding
 					find = "<C-r>f", -- Find surrounding (to the right)
 					find_left = "<C-r>F", -- Find surrounding (to the left)
-					highlight = "<C-r>h", -- Highlight surrounding
+					highlight = "<C-r>v", -- Highlight surrounding
 					replace = "<C-r>r", -- Replace surrounding
 				},
 			})
