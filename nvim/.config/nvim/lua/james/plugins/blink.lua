@@ -1,6 +1,6 @@
 return {
 	"saghen/blink.cmp",
-    cond = not vim.g.vscode,
+	cond = not vim.g.vscode,
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 		{
