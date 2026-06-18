@@ -1,5 +1,6 @@
 vim.opt.relativenumber = true
 vim.opt.number = true
+vim.opt.signcolumn = "auto:1-2"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
