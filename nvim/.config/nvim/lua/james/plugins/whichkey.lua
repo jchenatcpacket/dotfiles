@@ -1,7 +1,7 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-    cond = not vim.g.vscode,
+	cond = not vim.g.vscode,
 	config = function()
 		local wk = require("which-key")
 		wk.setup({
@@ -19,7 +19,8 @@ return {
 			{ "<leader>rg", group = "Grugfar Replace in project", mode = { "n", "v" } },
 			{ "<leader>s", group = "Fzf", mode = { "n", "v" } },
 			{ "<leader>sr", group = "Fzf resume", mode = { "n", "v" } },
-            { "<leader>k", group = "kulala", mode = { "n" } },
+			{ "<leader>k", group = "kulala", mode = { "n" } },
+			{ "<leader>b", group = "bookmark", mode = { "n" } },
 			{ "<leader>?", group = "help", mode = { "n", "v" } },
 		})
 	end,
