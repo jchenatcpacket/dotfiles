@@ -1,6 +1,5 @@
 vim.opt.relativenumber = true
 vim.opt.number = true
-vim.opt.signcolumn = "auto:1-2"
 vim.opt.wrap = false
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true
@@ -9,7 +8,6 @@ vim.opt.autoindent = true
 vim.opt.foldenable = false
 vim.opt.termguicolors = true
 vim.opt.swapfile = false
-vim.opt.scrolloff = 8
 
 -- insert mode cursor blinking
 vim.o.guicursor = table.concat({
