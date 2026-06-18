@@ -3,7 +3,7 @@ return {
 	lazy = true,
 	cond = not vim.g.vscode,
 	dependencies = {
-		"esmuellert/codediff.nvim",
+		"ibhagwan/fzf-lua",
 	},
 	cmd = "Neogit",
 	keys = {

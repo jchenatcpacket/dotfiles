@@ -27,7 +27,7 @@ return {
 				extensions = { "oil" },
 			},
 			sections = {
-				lualine_a = { "mode", "grapple" },
+				lualine_a = { "mode" },
 				lualine_b = { "branch" },
 				lualine_c = {},
 				lualine_x = {

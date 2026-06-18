@@ -8,7 +8,6 @@ vim.opt.autoindent = true
 vim.opt.foldenable = false
 vim.opt.termguicolors = true
 vim.opt.swapfile = false
-vim.opt.scrolloff = 8
 
 -- insert mode cursor blinking
 vim.o.guicursor = table.concat({

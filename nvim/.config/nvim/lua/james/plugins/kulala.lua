@@ -1,7 +1,7 @@
 return {
 	"mistweaverco/kulala.nvim",
 	ft = { "http", "rest" },
-    cond = not vim.g.vscode,
+	cond = not vim.g.vscode,
 	config = function()
 		local kulala = require("kulala")
 
@@ -21,31 +21,16 @@ return {
 			kulala.run()
 		end, { desc = "Send request" })
 
-		vim.keymap.set({ "n", "v" }, "<leader>ka", function()
-			kulala.run_all()
-		end, { desc = "Send all requests" })
-
-		vim.keymap.set({ "n", "v" }, "<leader>kb", function()
-			kulala.scratchpad()
-		end, { desc = "Open scratchpad" })
-
-		-- vim.keymap.set({ "n", "v" }, "]k", function()
-		-- 	kulala.show_next()
-		-- end, { desc = "Next response" })
-		-- vim.keymap.set({ "n", "v" }, "[k", function()
-		-- 	kulala.show_previous()
-		-- end, { desc = "Previous response" })
-		--
 		vim.keymap.set({ "n", "v" }, "<leader>kq", function()
 			kulala.close()
 		end, { desc = "close" })
 
-		vim.keymap.set({ "n", "v" }, "<leader>kj", function()
-			kulala.jump_to_response()
-		end, { desc = "jump to response" })
+		vim.keymap.set({ "n", "v" }, "<leader>ki", function()
+			kulala.copy()
+		end, { desc = "copy current request to clipboard as curl command" })
 
-		vim.keymap.set({ "n", "v" }, "<leader>kx", function()
-			kulala.clear_responses_history()
-		end, { desc = "clear response history" })
+		vim.keymap.set({ "n", "v" }, "<leader>ke", function()
+			kulala.from_curl()
+		end, { desc = "paste from clipboard as curl command" })
 	end,
 }
