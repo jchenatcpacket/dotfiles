@@ -1,5 +1,5 @@
 return {
-	dir = "/Users/haochen/bookmark.nvim",
+    "jchenatcpacket/bookmark.nvim",
 	config = function()
 		require("bookmarks").setup()
 		local bm = require("bookmarks")
