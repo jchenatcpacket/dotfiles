@@ -1,5 +1,5 @@
 return {
-	dir = "/home/jchen/bookmark",
+	dir = "/Users/haochen/bookmark.nvim",
 	config = function()
 		require("bookmarks").setup()
 		local bm = require("bookmarks")
@@ -9,5 +9,23 @@ return {
 		vim.keymap.set("n", "<leader>bb", function()
 			bm.open()
 		end, { desc = "Open bookmarks" })
+		vim.keymap.set("n", "]of", function()
+			bm.jump_next("file")
+		end, { desc = "Next file bookmark" })
+		vim.keymap.set("n", "[of", function()
+			bm.jump_prev("files")
+		end, { desc = "Previous files bookmark" })
+		vim.keymap.set("n", "]ol", function()
+			bm.jump_next("line")
+		end, { desc = "Next line bookmark" })
+		vim.keymap.set("n", "[ol", function()
+			bm.jump_prev("line")
+		end, { desc = "Previous line bookmark" })
+		vim.keymap.set("n", "]oc", function()
+			bm.jump_next("location")
+		end, { desc = "Next location bookmark" })
+		vim.keymap.set("n", "[oc", function()
+			bm.jump_prev("location")
+		end, { desc = "Previous location bookmark" })
 	end,
 }
