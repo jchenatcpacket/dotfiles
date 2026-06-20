@@ -1,7 +1,11 @@
 return {
     "jchenatcpacket/bookmark.nvim",
 	config = function()
-		require("bookmarks").setup()
+		require("bookmarks").setup({
+			ui = {
+				width = 0.9,
+			},
+		})
 		local bm = require("bookmarks")
 		vim.keymap.set("n", "<leader>bf", bm.bookmark_file, { desc = "Bookmark file" })
 		vim.keymap.set("n", "<leader>bl", bm.toggle_line, { desc = "Toggle line bookmark" })
