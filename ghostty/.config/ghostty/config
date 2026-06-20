@@ -14,6 +14,7 @@ shell-integration-features = ssh-env,ssh-terminfo
 
 keybind = ctrl+a>w=new_window
 keybind = ctrl+a>c=new_tab
+keybind = ctrl+a>x=close_surface
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+j=goto_split:bottom
 keybind = ctrl+k=goto_split:top
