@@ -14,6 +14,6 @@ return {
 				sync_with_ring = false,
 			},
 		})
-		vim.keymap.set({ "n", "x" }, "<leader>p", "<cmd>YankyRingHistory<cr>", { desc = "Open Yank History" })
+		vim.keymap.set({ "n", "x" }, "<leader>y", "<cmd>YankyRingHistory<cr>", { desc = "Open Yank History" })
 	end,
 }
