@@ -10,7 +10,7 @@ return {
 	cmd = "Trouble",
 	keys = {
 			{
-			"<leader>c",
+			"<leader>t",
 			"<cmd>Trouble symbols toggle focus=false<cr>",
 			desc = "Symbols (Trouble)",
 		},
