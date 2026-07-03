@@ -99,18 +99,18 @@ config.keys = {
 	{
 		key = "H",
 		mods = "LEADER",
-		action = wezterm.AdjustPaneSize({ "Left", 5 }),
+		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
 	},
 	{
 		key = "J",
 		mods = "LEADER",
-		action = wezterm.AdjustPaneSize({ "Down", 5 }),
+		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
 	},
-	{ key = "K", mods = "LEADER", action = wezterm.AdjustPaneSize({ "Up", 5 }) },
+	{ key = "K", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
 	{
 		key = "L",
 		mods = "LEADER",
-		action = wezterm.AdjustPaneSize({ "Right", 5 }),
+		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
 	},
 }
 
