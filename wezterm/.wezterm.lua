@@ -13,7 +13,8 @@ config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 11
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
-config.default_domain = "WSL:Ubuntu"
+-- config.default_domain = "WSL:Ubuntu"
+config.default_domain = "dev-vm"
 
 config.wsl_domains = {
 	{
@@ -21,6 +22,15 @@ config.wsl_domains = {
 		distribution = "Ubuntu",
 		default_cwd = "~",
 		default_prog = { "/home/linuxbrew/.linuxbrew/bin/fish", "-l" },
+	},
+}
+
+config.ssh_domains = {
+	{
+		name = "dev-vm",
+		remote_address = "lin-jchen-01.int.cpacket.com",
+		username = "jchen",
+		default_prog = { "fish" },
 	},
 }
 
