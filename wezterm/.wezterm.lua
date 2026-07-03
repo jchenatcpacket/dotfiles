@@ -7,14 +7,15 @@ config.initial_rows = 28
 
 config.color_scheme = "catppuccin-macchiato"
 
-config.window_background_opacity = 0.87
+config.window_background_opacity = 0.9
+config.cursor_blink_rate = 500
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 11
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
--- config.default_domain = "WSL:Ubuntu"
-config.default_domain = "dev-vm"
+config.default_domain = "WSL:Ubuntu"
+-- config.default_domain = "dev-vm"
 
 config.wsl_domains = {
 	{
@@ -42,12 +43,12 @@ config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {
 	{
-		key = "s",
+		key = "v",
 		mods = "LEADER",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		key = "v",
+		key = "s",
 		mods = "LEADER",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
@@ -55,6 +56,61 @@ config.keys = {
 		key = "r",
 		mods = "LEADER",
 		action = wezterm.action.ReloadConfiguration,
+	},
+	{
+		key = "x",
+		mods = "LEADER",
+		action = wezterm.action.CloseCurrentPane({ confirm = false }),
+	},
+	{
+		key = "t",
+		mods = "LEADER",
+		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
+	},
+	{
+		key = "LeftArrow",
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "RightArrow",
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "UpArrow",
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "DownArrow",
+		mods = "LEADER",
+		action = wezterm.action.ActivatePaneDirection("Down"),
+	},
+	{ key = "1", mods = "LEADER", action = wezterm.action.ActivateTab(0) },
+	{ key = "2", mods = "LEADER", action = wezterm.action.ActivateTab(1) },
+	{ key = "3", mods = "LEADER", action = wezterm.action.ActivateTab(2) },
+	{ key = "4", mods = "LEADER", action = wezterm.action.ActivateTab(3) },
+	{ key = "5", mods = "LEADER", action = wezterm.action.ActivateTab(4) },
+	{ key = "6", mods = "LEADER", action = wezterm.action.ActivateTab(5) },
+	{ key = "7", mods = "LEADER", action = wezterm.action.ActivateTab(6) },
+	{ key = "8", mods = "LEADER", action = wezterm.action.ActivateTab(7) },
+	{ key = "9", mods = "LEADER", action = wezterm.action.ActivateTab(8) },
+	{
+		key = "H",
+		mods = "LEADER",
+		action = wezterm.AdjustPaneSize({ "Left", 5 }),
+	},
+	{
+		key = "J",
+		mods = "LEADER",
+		action = wezterm.AdjustPaneSize({ "Down", 5 }),
+	},
+	{ key = "K", mods = "LEADER", action = wezterm.AdjustPaneSize({ "Up", 5 }) },
+	{
+		key = "L",
+		mods = "LEADER",
+		action = wezterm.AdjustPaneSize({ "Right", 5 }),
 	},
 }
 
