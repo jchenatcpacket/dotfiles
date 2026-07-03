@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 config.initial_cols = 120
 config.initial_rows = 28
 
-config.color_scheme = "catppuccin-macchiato"
+config.color_scheme = "GruvboxDark"
 
 config.window_background_opacity = 0.9
 config.cursor_blink_rate = 500
@@ -14,8 +14,9 @@ config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 11
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
-config.default_domain = "WSL:Ubuntu"
+-- config.default_domain = "WSL:Ubuntu"
 -- config.default_domain = "dev-vm"
+config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
 
 config.wsl_domains = {
 	{
