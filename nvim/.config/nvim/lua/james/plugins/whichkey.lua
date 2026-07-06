@@ -21,6 +21,7 @@ return {
 			{ "<leader>k", group = "kulala", mode = { "n" } },
 			{ "<leader>b", group = "bookmark", mode = { "n" } },
 			{ "<leader>x", group = "git conflict", mode = { "n" } },
+			{ "<leader>p", group = "peeper pick", mode = { "n", "v" } },
 			{ "<leader>?", group = "help", mode = { "n", "v" } },
 		})
 	end,

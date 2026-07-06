@@ -6,6 +6,7 @@ return {
 		width = 82,
 	},
 	keys = {
-		{ "<leader>p", "<cmd>PeeperPicker<cr>", desc = "Peeper Picker" },
+		{ "<leader>pp", "<cmd>PeeperPicker<cr>", desc = "Peeper Picker" },
+		{ "<leader>ph", "<cmd>PeeperPickerHistory<cr>", desc = "Peeper Picker History" },
 	},
 }
