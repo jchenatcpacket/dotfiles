@@ -9,14 +9,24 @@ config.color_scheme = "GruvboxDark"
 
 config.window_background_opacity = 0.9
 config.cursor_blink_rate = 500
+config.window_close_confirmation = "AlwaysPrompt"
+config.automatically_reload_config = true
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 11
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
--- config.default_domain = "WSL:Ubuntu"
--- config.default_domain = "dev-vm"
-config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
+local is_mac = wezterm.target_triple:find("darwin") ~= nil
+local is_windows = wezterm.target_triple:find("windows") ~= nil
+local is_linux = wezterm.target_triple:find("linux") ~= nil
+
+if is_mac then
+	config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
+	config.font_size = 14
+elseif is_linux then
+elseif is_windows then
+	config.default_domain = "WSL:Ubuntu"
+	config.font_size = 14
+end
 
 config.wsl_domains = {
 	{
@@ -32,13 +42,13 @@ config.ssh_domains = {
 		name = "dev-vm",
 		remote_address = "lin-jchen-01.int.cpacket.com",
 		username = "jchen",
-		default_prog = { "fish" },
+		default_prog = { "/home/linuxbrew/.linuxbrew/bin/fish", "-l" },
+		assume_shell = "Posix",
+		ssh_option = {
+			identityfile = "/home/jchen/.ssh/id_ed25519.pub",
+		},
 	},
 }
-
-config.automatically_reload_config = true
-
-config.window_close_confirmation = "NeverPrompt"
 
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 
@@ -112,6 +122,11 @@ config.keys = {
 		key = "L",
 		mods = "LEADER",
 		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
+	},
+	{
+		key = "d",
+		mods = "LEADER",
+		action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|DOMAINS" }),
 	},
 }
 
