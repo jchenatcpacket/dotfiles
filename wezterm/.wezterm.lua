@@ -40,7 +40,7 @@ config.wsl_domains = {
 config.ssh_domains = {
 	{
 		name = "dev-vm",
-		remote_address = "lin-jchen-01.int.cpacket.com",
+		remote_address = "10.50.4.134",
 		username = "jchen",
 		default_prog = { "/home/linuxbrew/.linuxbrew/bin/fish", "-l" },
 		assume_shell = "Posix",
