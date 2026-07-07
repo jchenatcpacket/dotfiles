@@ -1,9 +1,12 @@
 return {
-    "jchenatcpacket/bookmark.nvim",
+	"jchenatcpacket/bookmark.nvim",
 	config = function()
 		require("bookmarks").setup({
 			ui = {
 				width = 0.9,
+			},
+			signs = {
+				line = { text = "", texthl = "BookmarksSign" },
 			},
 		})
 		local bm = require("bookmarks")
