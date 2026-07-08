@@ -1,11 +1,8 @@
 return {
 	"dmtrKovalenko/fff.nvim",
 	build = function()
-		-- downloads a prebuilt binary or falls back to cargo build
 		require("fff.download").download_or_build_binary()
 	end,
-	-- for nixos:
-	-- build = "nix run .#release",
 	opts = {
 		layout = {
 			prompt_position = "top", -- or 'top'

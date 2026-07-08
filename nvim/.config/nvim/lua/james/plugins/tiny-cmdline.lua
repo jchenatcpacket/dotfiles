@@ -7,7 +7,5 @@ return {
 		require("tiny-cmdline").setup({
 			on_reposition = require("tiny-cmdline").adapters.blink,
 		})
-		vim.api.nvim_set_hl(0, "TinyCmdlineBorder", { fg = "#ebdbb2" })
-		vim.api.nvim_set_hl(0, "TinyCmdlineNormal", { bg = "#282828" })
 	end,
 }

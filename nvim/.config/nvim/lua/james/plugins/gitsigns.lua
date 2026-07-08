@@ -9,7 +9,6 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>hd", gitsigns.diffthis, { desc = "gitsigns diff this" })
 		vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "gitsigns reset hunk" })
 		vim.keymap.set("n", "<leader>hR", gitsigns.reset_buffer, { desc = "gitsigns reset buffer" })
 		vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, { desc = "gitsigns stage hunk" })
