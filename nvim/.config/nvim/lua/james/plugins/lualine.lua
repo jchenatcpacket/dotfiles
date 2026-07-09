@@ -5,6 +5,19 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
+		local symbols = require("trouble").statusline({
+			mode = "lsp_document_symbols",
+			groups = {},
+			title = false,
+			filter = { range = true },
+			format = "{kind_icon}{symbol.name:Normal} >",
+			-- The following line is needed to fix the background color
+			-- Set it to the lualine section you want to use
+			hl_group = "lualine_c_normal",
+		})
+        -- needed for separator highlight
+		vim.api.nvim_set_hl(0, "StatusLine", { link = "lualine_c_normal" })
+
 		require("lualine").setup({
 			options = {
 				component_separators = { left = "", right = "" },
@@ -29,7 +42,10 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch" },
-				lualine_c = {},
+				lualine_c = { {
+					symbols.get,
+					cond = symbols.has,
+				} },
 				lualine_x = {
 					{
 						"diagnostics",
