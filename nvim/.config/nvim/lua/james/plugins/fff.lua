@@ -23,14 +23,14 @@ return {
 			desc = "grep files",
 		},
 		{
-			"<leader>zg",
+			"<leader>zp",
 			function()
 				require("fff").live_grep()
 			end,
 			desc = "grep project",
 		},
 		{
-			"<leader>zc",
+			"<leader>zw",
 			function()
 				require("fff").live_grep_under_cursor()
 			end,
