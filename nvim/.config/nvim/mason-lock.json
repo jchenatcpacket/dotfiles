@@ -5,14 +5,14 @@
   "gh-actions-language-server": "0.3.58",
   "gofumpt": "v0.10.0",
   "goimports-reviser": "v3.12.6",
-  "gopls": "v0.22.0",
+  "gopls": "v0.23.0",
   "kulala-fmt": "4.4.0",
   "lua-language-server": "3.18.2",
-  "nixfmt": "v1.3.1",
+  "nixfmt": "v1.4.0",
   "prettier": "3.9.4",
   "prettierd": "0.28.0",
   "pyright": "1.1.411",
-  "rust-analyzer": "2026-06-29",
+  "rust-analyzer": "2026-07-06",
   "stylua": "v2.5.2",
   "typescript-language-server": "5.3.0"
 }
