@@ -1,5 +1,16 @@
 local wezterm = require("wezterm")
 
+-- plugins
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+tabline.setup({
+	options = {
+		theme = "GruvboxDark",
+		section_separators = "",
+		component_separators = "",
+	},
+	sections = { tabline_b = { "workspace", "domain" }, tabline_z = {} },
+})
+
 local config = wezterm.config_builder()
 
 config.initial_cols = 120
@@ -14,6 +25,11 @@ config.automatically_reload_config = true
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
+
+-- causing tabline problems
+-- wezterm.on("update-right-status", function(window, pane)
+-- 	window:set_right_status(window:active_workspace())
+-- end)
 
 local is_mac = wezterm.target_triple:find("darwin") ~= nil
 local is_windows = wezterm.target_triple:find("windows") ~= nil
@@ -127,6 +143,24 @@ config.keys = {
 		key = "d",
 		mods = "LEADER",
 		action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|DOMAINS" }),
+	},
+	{
+		key = "w",
+		mods = "LEADER",
+		action = wezterm.action.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
+	},
+	{
+		key = "s",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.Search("CurrentSelectionOrEmptyString"),
+	},
+}
+
+config.mouse_bindings = {
+	{
+		event = { Down = { streak = 3, button = "Left" } },
+		action = wezterm.action.SelectTextAtMouseCursor("SemanticZone"),
+		mods = "NONE",
 	},
 }
 
