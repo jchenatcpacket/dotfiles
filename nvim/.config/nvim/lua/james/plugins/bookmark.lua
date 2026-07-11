@@ -1,5 +1,6 @@
 return {
 	"jchenatcpacket/bookmark.nvim",
+	cond = not vim.g.vscode,
 	config = function()
 		require("bookmarks").setup({
 			ui = {

@@ -1,5 +1,6 @@
 return {
 	"parwest/peeper-picker.nvim",
+	cond = not vim.g.vscode,
 	main = "peeper_picker",
 	cmd = "PeeperPicker",
 	opts = {
