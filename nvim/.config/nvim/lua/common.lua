@@ -9,11 +9,12 @@ vim.opt.foldenable = false
 vim.opt.termguicolors = true
 vim.opt.swapfile = false
 
--- insert mode cursor blinking
+-- cursor shape + blinking (Neovim must request blink itself; Ghostty's
+-- cursor-style-blink is ignored once an app drives the cursor via guicursor)
 vim.o.guicursor = table.concat({
-	"n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
-	"i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
-	"r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100",
+	"n-v-c:block-blinkwait1000-blinkon500-blinkoff500",
+	"i-ci:ver25-blinkwait1000-blinkon500-blinkoff500",
+	"r:hor50-blinkwait100-blinkon500-blinkoff500",
 }, ",")
 
 vim.api.nvim_create_user_command("SetIndent", function(opts)
@@ -33,8 +34,25 @@ end, { nargs = 1, desc = "Set Indent spaces to either 2 or 4" })
 
 vim.api.nvim_create_autocmd("VimEnter", { command = "SetIndent 4" })
 
-vim.cmd([[match TrailingSpace /\s\+$/]])
-vim.cmd("hi TrailingSpace ctermbg=238 guibg=#4D0000")
+-- highlight trailing whitespace (re-applied per window and after colorscheme changes)
+local function set_trailing_hl()
+	vim.api.nvim_set_hl(0, "TrailingSpace", { ctermbg = 238, bg = "#4D0000" })
+end
+set_trailing_hl()
+
+vim.api.nvim_create_autocmd("ColorScheme", { callback = set_trailing_hl })
+
+vim.api.nvim_create_autocmd({ "BufWinEnter", "WinNew" }, {
+	callback = function()
+		-- avoid stacking duplicate matches on the same window
+		for _, m in ipairs(vim.fn.getmatches()) do
+			if m.group == "TrailingSpace" then
+				return
+			end
+		end
+		vim.fn.matchadd("TrailingSpace", [[\s\+$]])
+	end,
+})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()

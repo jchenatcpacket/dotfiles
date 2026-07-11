@@ -1,5 +1,6 @@
 return {
 	"mrjones2014/smart-splits.nvim",
+	cond = not vim.g.vscode,
 	config = function()
 		require("smart-splits").setup({})
 		vim.keymap.set("n", "<A-h>", require("smart-splits").resize_left)
