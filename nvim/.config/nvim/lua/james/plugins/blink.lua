@@ -74,14 +74,14 @@ return {
 		},
 
 		sources = {
-			default = { "lsp", "path", "snippets", "ripgrep" },
+			default = { "lsp", "buffer", "snippets", "path", "ripgrep" },
 			providers = {
-				lsp = {
-					score_offset = 8,
-				},
-				snippets = {
-					score_offset = 5,
-				},
+				-- lsp = {
+				-- 	score_offset = 8,
+				-- },
+				-- snippets = {
+				-- 	score_offset = 5,
+				-- },
 				ripgrep = {
 					module = "blink-ripgrep",
 					name = "Ripgrep",

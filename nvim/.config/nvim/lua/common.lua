@@ -34,25 +34,23 @@ end, { nargs = 1, desc = "Set Indent spaces to either 2 or 4" })
 
 vim.api.nvim_create_autocmd("VimEnter", { command = "SetIndent 4" })
 
--- highlight trailing whitespace (re-applied per window and after colorscheme changes)
-local function set_trailing_hl()
-	vim.api.nvim_set_hl(0, "TrailingSpace", { ctermbg = 238, bg = "#4D0000" })
-end
-set_trailing_hl()
-
-vim.api.nvim_create_autocmd("ColorScheme", { callback = set_trailing_hl })
-
-vim.api.nvim_create_autocmd({ "BufWinEnter", "WinNew" }, {
-	callback = function()
-		-- avoid stacking duplicate matches on the same window
-		for _, m in ipairs(vim.fn.getmatches()) do
-			if m.group == "TrailingSpace" then
-				return
-			end
-		end
-		vim.fn.matchadd("TrailingSpace", [[\s\+$]])
-	end,
-})
+-- -- highlight trailing whitespace (re-applied per window and after colorscheme changes)
+-- local function set_trailing_hl()
+-- 	vim.api.nvim_set_hl(0, "TrailingSpace", { ctermbg = 238, bg = "#4D0000" })
+-- end
+-- set_trailing_hl()
+-- vim.api.nvim_create_autocmd("ColorScheme", { callback = set_trailing_hl })
+-- vim.api.nvim_create_autocmd({ "BufWinEnter", "WinNew" }, {
+-- 	callback = function()
+-- 		-- avoid stacking duplicate matches on the same window
+-- 		for _, m in ipairs(vim.fn.getmatches()) do
+-- 			if m.group == "TrailingSpace" then
+-- 				return
+-- 			end
+-- 		end
+-- 		vim.fn.matchadd("TrailingSpace", [[\s\+$]])
+-- 	end,
+-- })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()

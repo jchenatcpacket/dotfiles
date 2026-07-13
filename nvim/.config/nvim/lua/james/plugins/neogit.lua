@@ -7,6 +7,6 @@ return {
 	},
 	cmd = "Neogit",
 	keys = {
-		{ "<leader>g", "<cmd>Neogit kind=floating<cr>", desc = "Show Neogit UI" },
+		{ "<leader>gg", "<cmd>Neogit kind=floating<cr>", desc = "Show Neogit UI" },
 	},
 }
