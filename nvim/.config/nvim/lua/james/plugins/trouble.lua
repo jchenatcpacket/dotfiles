@@ -2,9 +2,14 @@ return {
 	"folke/trouble.nvim",
 	cond = not vim.g.vscode,
 	opts = {
+		follow = true, -- track & highlight the symbol under the cursor
 		win = {
 			position = "right",
 			size = 0.3,
+			wo = {
+				-- make the current-symbol row (cursorline) stand out
+				winhighlight = "CursorLine:Visual",
+			},
 		},
 	},
 	cmd = "Trouble",
