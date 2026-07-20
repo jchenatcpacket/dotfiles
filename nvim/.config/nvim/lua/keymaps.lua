@@ -7,6 +7,11 @@ end, { expr = true, noremap = true })
 
 vim.keymap.set("n", "cc", "ggdG", { desc = "clear buffer" })
 
+vim.keymap.set("n", "<F1>", function()
+	vim.wo.number = true
+	vim.wo.relativenumber = not vim.wo.relativenumber
+end, { desc = "toggle relative line numbers" })
+
 vim.keymap.set({ "n", "v" }, "<C-w>1c", ":1wincmd c<cr>", { desc = "close window 1" })
 vim.keymap.set({ "n", "v" }, "<C-w>2c", ":2wincmd c<cr>", { desc = "close window 2" })
 vim.keymap.set({ "n", "v" }, "<C-w>3c", ":3wincmd c<cr>", { desc = "close window 3" })
