@@ -73,7 +73,7 @@ return {
 			fzf.grep_visual()
 		end, { desc = "grep visual selection" })
 
-		vim.keymap.set({ "n", "v" }, "<C-f>", ":FzfLua ", { desc = ":Fzf" })
+		-- vim.keymap.set({ "n", "v" }, "<C-f>", ":FzfLua ", { desc = ":Fzf" })
 
 		vim.keymap.set({ "n", "v" }, "<leader>sk", function()
 			fzf.keymaps({ winopts = { preview = { hidden = true } } })
@@ -110,5 +110,10 @@ return {
 		vim.keymap.set("n", "<leader>dw", function()
 			fzf.diagnostics_workspace()
 		end, { desc = "Show workspace diagnostics" })
+
+		-- git changes
+		vim.keymap.set("n", "<leader>gd", function()
+			fzf.git_diff()
+		end, { desc = "show git diff" })
 	end,
 }

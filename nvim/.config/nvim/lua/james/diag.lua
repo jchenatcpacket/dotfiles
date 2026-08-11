@@ -18,7 +18,7 @@ vim.diagnostic.config({
 		end,
 	},
 	severity_sort = true,
-	signs = diag_signs,
+	signs = false,
 })
 
 vim.keymap.set("n", "<leader>dc", function()
