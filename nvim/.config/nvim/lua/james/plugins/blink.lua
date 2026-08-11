@@ -3,10 +3,6 @@ return {
 	cond = not vim.g.vscode,
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		{
-			"mikavilpas/blink-ripgrep.nvim",
-			version = "*", -- use the latest stable version
-		},
 	},
 	version = "1.*",
 	opts = {
@@ -74,22 +70,8 @@ return {
 		},
 
 		sources = {
-			default = { "lsp", "buffer", "snippets", "path", "ripgrep" },
-			providers = {
-				-- lsp = {
-				-- 	score_offset = 8,
-				-- },
-				-- snippets = {
-				-- 	score_offset = 5,
-				-- },
-				ripgrep = {
-					module = "blink-ripgrep",
-					name = "Ripgrep",
-					opts = {
-						prefix_min_len = 7,
-					},
-				},
-			},
+			default = { "lsp", "buffer", "snippets", "path" },
 		},
 	},
+	opts_extend = { "sources.default" },
 }
