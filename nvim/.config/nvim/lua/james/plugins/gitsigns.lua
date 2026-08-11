@@ -1,6 +1,6 @@
 return {
 	"lewis6991/gitsigns.nvim",
-    cond = not vim.g.vscode,
+	cond = not vim.g.vscode,
 	config = function()
 		local gitsigns = require("gitsigns")
 		gitsigns.setup({
@@ -9,6 +9,7 @@ return {
 			},
 		})
 
+		vim.keymap.set("n", "<leader>hd", gitsigns.diffthis, { desc = "gitsigns diffthis" })
 		vim.keymap.set("n", "<leader>hr", gitsigns.reset_hunk, { desc = "gitsigns reset hunk" })
 		vim.keymap.set("n", "<leader>hR", gitsigns.reset_buffer, { desc = "gitsigns reset buffer" })
 		vim.keymap.set("n", "<leader>hs", gitsigns.stage_hunk, { desc = "gitsigns stage hunk" })
