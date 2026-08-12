@@ -73,7 +73,7 @@ return {
 			fzf.grep_visual()
 		end, { desc = "grep visual selection" })
 
-		vim.keymap.set({ "n", "v" }, "<C-f>", ":FzfLua ", { desc = ":Fzf" })
+		-- vim.keymap.set({ "n", "v" }, "<C-f>", ":FzfLua ", { desc = ":Fzf" })
 
 		vim.keymap.set({ "n", "v" }, "<leader>sk", function()
 			fzf.keymaps({ winopts = { preview = { hidden = true } } })
@@ -110,5 +110,28 @@ return {
 		vim.keymap.set("n", "<leader>dw", function()
 			fzf.diagnostics_workspace()
 		end, { desc = "Show workspace diagnostics" })
+
+		-- git changes
+		vim.keymap.set("n", "<leader>gd", function()
+			fzf.git_diff()
+		end, { desc = "show git diff" })
+		vim.keymap.set("n", "<leader>gh", function()
+			fzf.git_hunks()
+		end, { desc = "show git hunks" })
+		vim.keymap.set("n", "<leader>gc", function()
+			fzf.git_commits()
+		end, { desc = "show git project commit log" })
+		vim.keymap.set("n", "<leader>gb", function()
+			fzf.git_bcommits()
+		end, { desc = "show git buffer commit log" })
+		vim.keymap.set("n", "<leader>gl", function()
+			fzf.git_blame()
+		end, { desc = "show git buffer blame history" })
+		vim.keymap.set("n", "<leader>gw", function()
+			fzf.git_worktrees()
+		end, { desc = "show git worktree" })
+		vim.keymap.set("n", "<leader>ga", function()
+			fzf.git_branches()
+		end, { desc = "show git worktree" })
 	end,
 }

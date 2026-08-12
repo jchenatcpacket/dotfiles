@@ -22,6 +22,7 @@ return {
 			{ "<leader>b", group = "bookmark", mode = { "n" } },
 			{ "<leader>x", group = "git conflict", mode = { "n" } },
 			{ "<leader>p", group = "peeper pick", mode = { "n", "v" } },
+			{ "<leader>g", group = "git", mode = { "n", "v" } },
 			{ "<leader>?", group = "help", mode = { "n", "v" } },
 		})
 	end,

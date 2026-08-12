@@ -6,12 +6,12 @@ return {
 		config = function()
 			require("mini.surround").setup({
 				mappings = {
-					add = "ga", -- Add surrounding in Normal and Visual modes
-					delete = "gd", -- Delete surrounding
+					add = "<F2>", -- Add surrounding in Normal and Visual modes
+					delete = "<F3>", -- Delete surrounding
 					find = "gf", -- Find surrounding (to the right)
 					find_left = "gF", -- Find surrounding (to the left)
-					highlight = "gv", -- Highlight surrounding
-					replace = "gp", -- Replace surrounding
+					highlight = "gv", -- Highlight surroundwng
+					replace = "<F4>", -- Replace surroundwng
 				},
 			})
 		end,
