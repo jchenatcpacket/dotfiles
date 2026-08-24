@@ -4,16 +4,16 @@
   "dockerfile-language-server": "0.15.0",
   "gh-actions-language-server": "0.3.61",
   "gofumpt": "v0.11.0",
-  "goimports": "v0.48.0",
+  "goimports": "v0.49.0",
   "goimports-reviser": "v3.12.6",
   "gopls": "v0.23.0",
   "kulala-fmt": "4.5.3",
-  "lua-language-server": "3.19.0",
+  "lua-language-server": "3.19.1",
   "nixfmt": "v1.4.0",
   "prettier": "3.9.6",
   "prettierd": "0.29.0",
-  "pyright": "1.1.411",
-  "rust-analyzer": "2026-08-10.1",
+  "pyright": "1.1.413",
+  "rust-analyzer": "2026-08-17.4",
   "stylua": "v2.5.2",
-  "typescript-language-server": "5.3.0"
+  "typescript-language-server": "6.0.0"
 }

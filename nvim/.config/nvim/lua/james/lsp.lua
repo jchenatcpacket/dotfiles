@@ -8,28 +8,22 @@ vim.lsp.config("lua_ls", {
 	},
 })
 
+vim.lsp.config("pyright", {
+	settings = {
+		python = {
+			analysis = {
+				autoImportCompletions = false,
+			},
+		},
+	},
+})
+
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("pyright")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("gopls")
 vim.lsp.enable("dockerfilels")
 vim.lsp.enable("docker_compose_language_service")
-
--- rust inlay hint
--- vim.api.nvim_create_autocmd("LspAttach", {
--- 	pattern = "*.rs",
--- 	callback = function()
--- 		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
--- 	end,
--- })
-
-vim.keymap.set("n", "<leader>lh", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
-end, { desc = "toggle lsp inlay type hints" })
-
-vim.keymap.set("n", "<leader>ljd", vim.lsp.buf.definition, { desc = "Jump to LSP Definition" })
-
-vim.keymap.set("n", "<leader>lji", vim.lsp.buf.implementation, { desc = "Jump to LSP Implementation" })
 
 -- go auto import and format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
