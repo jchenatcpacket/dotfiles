@@ -8,6 +8,7 @@ vim.opt.autoindent = true
 vim.opt.foldenable = false
 vim.opt.termguicolors = true
 vim.opt.swapfile = false
+vim.opt.scrolloff = 7
 
 -- cursor shape + blinking (Neovim must request blink itself; Ghostty's
 -- cursor-style-blink is ignored once an app drives the cursor via guicursor)
