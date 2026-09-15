@@ -8,11 +8,11 @@
   "gopls": "v0.23.0",
   "kulala-fmt": "4.5.3",
   "lua-language-server": "3.19.1",
-  "nixfmt": "v1.4.0",
+  "nixfmt": "v1.5.0",
   "prettier": "3.9.6",
   "prettierd": "0.29.0",
-  "pyright": "1.1.413",
-  "rust-analyzer": "2026-09-07",
+  "pyright": "1.1.414",
+  "rust-analyzer": "2026-09-14",
   "stylua": "v2.5.2",
   "typescript-language-server": "6.0.0"
 }
