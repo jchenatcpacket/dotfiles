@@ -1,5 +1,5 @@
 {
-  "cspell": "10.3.0",
+  "cspell": "10.3.1",
   "docker-compose-language-service": "1.0.0",
   "dockerfile-language-server": "0.15.0",
   "gh-actions-language-server": "0.3.61",

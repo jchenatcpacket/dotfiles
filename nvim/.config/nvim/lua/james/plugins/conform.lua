@@ -1,6 +1,6 @@
 return {
 	"stevearc/conform.nvim",
-    cond = not vim.g.vscode,
+	cond = not vim.g.vscode,
 	dependencies = { "williamboman/mason.nvim" },
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
@@ -29,6 +29,7 @@ return {
 				rust = { "rustfmt", lsp_format = "fallback" },
 				go = { "goimports-reviser", "gofumpt" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
+				typescript = { "prettierd", "prettier", stop_after_first = true },
 				json = { "prettierd", "prettier", stop_after_first = true },
 				http = { "kulala-fmt" },
 			},
@@ -38,7 +39,7 @@ return {
 			conform.format()
 		end, { desc = "Format buffer or visual" })
 
-		vim.keymap.set({ "n" }, "<leader>ft", function()
+		vim.keymap.set({ "n" }, "<leader>fw", function()
 			conform.format({ formatters = { "trim_whitespace" } })
 		end, { desc = "trim trailing whitespace" })
 	end,
