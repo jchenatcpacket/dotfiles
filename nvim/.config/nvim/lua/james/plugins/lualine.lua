@@ -23,14 +23,18 @@ return {
 					"grug-far",
 					"grug-far-historye",
 					"grug-far-help",
-                    "Outline",
+					"Outline",
 				},
 				extensions = { "oil" },
 			},
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch" },
-				lualine_c = {},
+				lualine_c = {
+					function()
+						return require("screenkey").get_keys()
+					end,
+				},
 				lualine_x = {
 					{
 						"diagnostics",

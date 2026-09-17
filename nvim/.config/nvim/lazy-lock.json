@@ -31,6 +31,7 @@
   "oil.nvim": { "branch": "master", "commit": "b73018b75affd13fa38e2fc94ef753b465f770d7" },
   "outline.nvim": { "branch": "main", "commit": "2a132953b944561d45b52e4541ebfff71934a742" },
   "peeper-picker.nvim": { "branch": "main", "commit": "1f9459b3e7fe0ec5ab5324e6888f7e32e9ff3514" },
+  "screenkey.nvim": { "branch": "main", "commit": "16390931d847b1d5d77098daccac4e55654ac9e2" },
   "scrollEOF.nvim": { "branch": "master", "commit": "e462b9a07b8166c3e8011f1dcbc6bf68b67cd8d7" },
   "smart-splits.nvim": { "branch": "master", "commit": "ec76708f1617ef9e2ac353357fe52d2c997a0f06" },
   "tiny-cmdline.nvim": { "branch": "main", "commit": "d83700b48d8ff5625dbef4029af071db559544e5" },
