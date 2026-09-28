@@ -1,5 +1,5 @@
 {
-  "cspell": "10.3.1",
+  "cspell": "10.3.3",
   "docker-compose-language-service": "1.0.0",
   "dockerfile-language-server": "0.15.0",
   "gh-actions-language-server": "0.3.61",
@@ -9,10 +9,10 @@
   "kulala-fmt": "4.5.3",
   "lua-language-server": "3.19.1",
   "nixfmt": "v1.5.0",
-  "prettier": "3.9.6",
+  "prettier": "3.9.8",
   "prettierd": "0.29.0",
   "pyright": "1.1.414",
-  "rust-analyzer": "2026-09-14",
+  "rust-analyzer": "2026-09-21",
   "stylua": "v2.5.2",
   "typescript-language-server": "6.0.0"
 }

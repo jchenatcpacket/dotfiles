@@ -18,7 +18,6 @@ return {
 			{ "<leader>rg", group = "Grugfar Replace in project", mode = { "n", "v" } },
 			{ "<leader>s", group = "Fzf", mode = { "n", "v" } },
 			{ "<leader>sr", group = "Fzf resume", mode = { "n", "v" } },
-			{ "<leader>k", group = "kulala", mode = { "n" } },
 			{ "<leader>b", group = "bookmark", mode = { "n" } },
 			{ "<leader>x", group = "git conflict", mode = { "n" } },
 			{ "<leader>p", group = "peeper pick", mode = { "n", "v" } },

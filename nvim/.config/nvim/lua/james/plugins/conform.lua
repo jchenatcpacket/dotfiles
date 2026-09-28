@@ -13,14 +13,6 @@ return {
 				lsp_format = "never",
 			},
 
-			formatters = {
-				kulala = {
-					command = "kulala-fmt",
-					args = { "format", "$FILENAME" },
-					stdin = false,
-				},
-			},
-
 			format_on_save = false,
 
 			formatters_by_ft = {
@@ -31,7 +23,6 @@ return {
 				javascript = { "prettierd", "prettier", stop_after_first = true },
 				typescript = { "prettierd", "prettier", stop_after_first = true },
 				json = { "prettierd", "prettier", stop_after_first = true },
-				http = { "kulala-fmt" },
 			},
 		})
 
