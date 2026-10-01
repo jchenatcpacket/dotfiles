@@ -2,7 +2,6 @@ return {
 	{
 		"nvim-mini/mini.surround",
 		version = "*",
-		cond = not vim.g.vscode,
 		config = function()
 			require("mini.surround").setup({
 				mappings = {

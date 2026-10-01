@@ -1,6 +1,5 @@
 return {
 	"MagicDuck/grug-far.nvim",
-    cond = not vim.g.vscode,
 	config = function()
 		local grugfar = require("grug-far")
 		grugfar.setup({

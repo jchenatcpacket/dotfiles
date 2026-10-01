@@ -3,7 +3,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		build = ":TSUpdate",
-		cond = not vim.g.vscode,
 		config = function()
 			require("nvim-treesitter").install({
 				"bash",
@@ -55,7 +54,6 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		cond = not vim.g.vscode,
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		config = function()
 			require("nvim-treesitter-textobjects").setup({

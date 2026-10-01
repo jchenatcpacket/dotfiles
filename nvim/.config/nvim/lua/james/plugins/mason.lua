@@ -1,7 +1,6 @@
 return {
 	{
 		"williamboman/mason.nvim",
-		cond = not vim.g.vscode,
 		config = function()
 			require("mason").setup({
 				ui = {
@@ -16,7 +15,6 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-		cond = not vim.g.vscode,
 		dependencies = {
 			"williamboman/mason.nvim",
 			"neovim/nvim-lspconfig",
@@ -27,7 +25,6 @@ return {
 	},
 	{
 		"zapling/mason-lock.nvim",
-		cond = not vim.g.vscode,
 		dependencies = "williamboman/mason.nvim",
 		config = function()
 			require("mason-lock").setup({
