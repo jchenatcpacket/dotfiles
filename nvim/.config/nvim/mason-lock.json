@@ -1,18 +1,17 @@
 {
-  "cspell": "10.3.3",
+  "cspell": "10.3.4",
   "docker-compose-language-service": "1.0.0",
   "dockerfile-language-server": "0.15.0",
   "gh-actions-language-server": "0.3.61",
   "gofumpt": "v0.12.0",
   "goimports-reviser": "v3.13.2",
   "gopls": "v0.23.0",
-  "kulala-fmt": "4.5.3",
   "lua-language-server": "3.19.1",
   "nixfmt": "v1.5.0",
-  "prettier": "3.9.8",
+  "prettier": "3.9.9",
   "prettierd": "0.29.0",
   "pyright": "1.1.414",
-  "rust-analyzer": "2026-09-21",
+  "rust-analyzer": "2026-09-28",
   "stylua": "v2.5.2",
-  "typescript-language-server": "6.0.0"
+  "typescript-language-server": "6.0.1"
 }
