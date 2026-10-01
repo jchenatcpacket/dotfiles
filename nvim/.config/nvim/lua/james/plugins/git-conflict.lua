@@ -1,7 +1,6 @@
 return {
 	"akinsho/git-conflict.nvim",
 	version = "*",
-	cond = not vim.g.vscode,
 	config = function()
 		vim.api.nvim_set_hl(0, "GitConflictCurrentLabel", { bg = "#2a5c64" }) -- Current header
 		vim.api.nvim_set_hl(0, "GitConflictCurrent", { bg = "#29444c" }) -- Current body

@@ -1,6 +1,5 @@
 return {
 	"RRethy/vim-illuminate",
-	cond = not vim.g.vscode,
 	config = function()
 		require("illuminate").configure({
 			filetypes_denylist = {

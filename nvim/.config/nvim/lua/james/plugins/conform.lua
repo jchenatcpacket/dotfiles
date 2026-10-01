@@ -1,6 +1,5 @@
 return {
 	"stevearc/conform.nvim",
-	cond = not vim.g.vscode,
 	dependencies = { "williamboman/mason.nvim" },
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
