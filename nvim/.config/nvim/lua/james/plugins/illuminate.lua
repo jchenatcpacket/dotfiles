@@ -9,8 +9,8 @@ return {
 			},
 		})
 
-		vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = "#504945" })
-		vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = "#504945" })
-		vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = "#504945" })
+		vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = "#665c54" })
+		vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = "#665c54" })
+		vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = "#665c54" })
 	end,
 }
