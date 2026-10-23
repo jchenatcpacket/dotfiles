@@ -13,11 +13,42 @@ local bar_gap = { Text = " " }
 -- thin divider between the system widgets; components already pad themselves by 1 on each side
 local widget_sep = { Text = "│" }
 
+-- the widgets shell out (powershell.exe on Windows, ~1s per call) and wezterm won't run a new
+-- update-status until the previous one returns, so sampling them inside tabline's handler freezes
+-- the whole bar, mode indicator included. Sample them on a timer instead and only read the cache.
+local poll_interval = 3
+local polled = {}
+local poll_gen
+
+local function poll()
+	-- a config reload starts a fresh loop in the new lua state; stop this one
+	if wezterm.GLOBAL.sys_poll_gen ~= poll_gen then
+		return
+	end
+	for widget in pairs(polled) do
+		local ok, text = pcall(widget.get_text)
+		polled[widget] = ok and text or "--"
+	end
+	wezterm.time.call_after(poll_interval, poll)
+end
+
+-- started lazily from update-status so it runs in the lua state that actually renders the bar
+local function ensure_polling()
+	if poll_gen then
+		return
+	end
+	poll_gen = (wezterm.GLOBAL.sys_poll_gen or 0) + 1
+	wezterm.GLOBAL.sys_poll_gen = poll_gen
+	wezterm.time.call_after(0, poll)
+end
+
 -- tabline function components must return a plain string, so prefix the widget text ourselves
 -- instead of using get_formatted (which returns colored format items)
 local function with_icon(widget, icon)
+	polled[widget] = "--"
 	return function()
-		return icon .. " " .. widget.get_text()
+		ensure_polling()
+		return icon .. " " .. polled[widget]
 	end
 end
 

@@ -34,6 +34,7 @@ function M.apply_to_config(config)
 	config.font = wezterm.font("JetBrainsMono Nerd Font")
 	config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 	config.font_size = 14
+	config.adjust_window_size_when_changing_font_size = false
 
 	config.underline_thickness = "200%" -- or a pixel value like 3 or '3px'
 	config.underline_position = "-2px" -- optional: nudge it down a bit

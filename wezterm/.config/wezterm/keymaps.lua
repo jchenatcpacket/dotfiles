@@ -22,15 +22,16 @@ function M.apply_to_config(config)
 			action = wezterm.action.Search("CurrentSelectionOrEmptyString"),
 		},
 		{
-			key = "c",
-			mods = "CTRL|SHIFT",
+			key = "y",
+			mods = "CTRL",
 			action = wezterm.action.CopyTo("Clipboard"),
 		},
 		{
 			key = "v",
-			mods = "CTRL|SHIFT",
+			mods = "CTRL",
 			action = wezterm.action.PasteFrom("Clipboard"),
 		},
+		{ key = "v", mods = "LEADER", action = wezterm.action.ActivateCopyMode },
 		{
 			key = "LeftArrow",
 			mods = "LEADER",
