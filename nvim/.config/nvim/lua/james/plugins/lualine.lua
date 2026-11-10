@@ -2,6 +2,7 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
+		"SmiteshP/nvim-navic",
 	},
 	config = function()
 		require("lualine").setup({
@@ -29,11 +30,7 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch" },
-				lualine_c = {
-					function()
-						return require("screenkey").get_keys()
-					end,
-				},
+				lualine_c = {},
 				lualine_x = {
 					{
 						"diagnostics",
@@ -91,7 +88,15 @@ return {
 			},
 			winbar = {
 				lualine_a = {},
-				lualine_b = {
+				lualine_b = {},
+				lualine_c = {
+					{
+						"navic",
+						color_correction = "static",
+					},
+				},
+				lualine_x = {},
+				lualine_y = {
 					{
 						"filetype",
 						colored = true, -- Displays filetype icon in color if set to true
@@ -100,9 +105,6 @@ return {
 					},
 					{ "filename", newfile_status = true, path = 3 },
 				},
-				lualine_c = {},
-				lualine_x = {},
-				lualine_y = {},
 				lualine_z = {},
 			},
 
