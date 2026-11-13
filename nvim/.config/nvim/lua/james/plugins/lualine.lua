@@ -91,13 +91,6 @@ return {
 				lualine_b = {},
 				lualine_c = {
 					{
-						"navic",
-						color_correction = "static",
-					},
-				},
-				lualine_x = {},
-				lualine_y = {
-					{
 						"filetype",
 						colored = true, -- Displays filetype icon in color if set to true
 						icon_only = false, -- Display only an icon for filetype
@@ -105,6 +98,8 @@ return {
 					},
 					{ "filename", newfile_status = true, path = 3 },
 				},
+				lualine_x = {},
+				lualine_y = {},
 				lualine_z = {},
 			},
 
